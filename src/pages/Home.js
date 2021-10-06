@@ -54,7 +54,7 @@ const Home = () => {
 					placeholder="Search jokes by text"
 					onChange={(e) => setQuery(e.target.value)}
 				/>
-				<Button onClick={searchJokeByText}>Search!</Button>
+				<Button onClick={searchJokeByText}>Search</Button>
 			</SearchTop>
 			{loading ? (
 				<span style={{ textAlign: "center" }}>Loading ...</span>
@@ -62,7 +62,7 @@ const Home = () => {
 				<MainJokes>
 					<Img src={joke.icon_url} alt="Icon Joke" />
 					<TextJokes>"{joke.value}"</TextJokes>
-					<Button onClick={getJoke}>Another!</Button>
+					<Button onClick={getJoke}>Another</Button>
 				</MainJokes>
 			)}
 			<SearchBottom>
@@ -80,7 +80,7 @@ const Home = () => {
 						</option>
 					))}
 				</InputSelect>
-				<Button onClick={getCategory}>Search!</Button>
+				<Button onClick={getCategory}>Search</Button>
 			</SearchBottom>
 		</Container>
 	);
