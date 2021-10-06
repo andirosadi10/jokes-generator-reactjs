@@ -31,6 +31,7 @@ const LinkS = styled(Link)`
 	text-decoration: none;
 	position: absolute;
 	left: 26px;
+	font-size: 24px;
 	color: #b45309;
 `;
 

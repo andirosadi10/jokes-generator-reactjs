@@ -31,9 +31,11 @@ const Search = () => {
 			/>
 			<SearchText>Search Text : {query}</SearchText>
 			{loading && <span style={{ textAlign: "center" }}>Loading...</span>}
-			{data.map((item, i) => (
-				<JokeText key={i}>"{item.value}"</JokeText>
-			))}
+			{data.length !== 0 ? (
+				data.map((item, i) => <JokeText key={i}>"{item.value}"</JokeText>)
+			) : (
+				<JokeText style={{ textAlign: "center" }}>Data Not Found !</JokeText>
+			)}
 		</Main>
 	);
 };

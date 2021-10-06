@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const Category = () => {
 	const [data, setData] = useState({});
+	const [loading, setLoading] = useState(true);
 	let { category } = useParams();
 
 	useEffect(() => {
@@ -13,7 +14,10 @@ const Category = () => {
 				method: "GET",
 			})
 				.then((res) => res.json())
-				.then((result) => setData(result))
+				.then((result) => {
+					setData(result);
+					setLoading(false);
+				})
 				.catch((error) => console.log(error));
 		};
 		getCategory();
@@ -23,7 +27,11 @@ const Category = () => {
 		<MainCategory>
 			<img src={data.icon_url} alt={data.categories} />
 			<Title>Category : {data.categories}</Title>
-			<Text style={{ textAlign: "center" }}>"{data.value}"</Text>
+			{loading ? (
+				<span style={{ textAlign: "center" }}>Loading...</span>
+			) : (
+				<Text style={{ textAlign: "center" }}>"{data.value}"</Text>
+			)}
 		</MainCategory>
 	);
 };
@@ -33,7 +41,7 @@ const MainCategory = styled.main`
 	flex-direction: column;
 	align-items: center;
 	padding: 16px;
-  margin-top:16px;
+	margin-top: 16px;
 `;
 
 const Title = styled.p`
@@ -50,7 +58,7 @@ const Text = styled.p`
 	font-size: 16px;
 	font-weight: 600;
 	font-style: italic;
-	line-height: 21.79px;
+	line-height: 22px;
 `;
 
 export default Category;

@@ -71,7 +71,11 @@ const Home = () => {
 						Search jokes by category
 					</option>
 					{categories.map((categoryName, i) => (
-						<option value={categoryName} key={i} style={{ maxWidth: "236px" }}>
+						<option
+							value={categoryName}
+							key={i}
+							style={{ paddingRight: "4px" }}
+						>
 							{categoryName}
 						</option>
 					))}
@@ -107,6 +111,7 @@ const Input = styled.input`
 	border-radius: 6px;
 	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
 	box-sizing: border-box;
+	margin-right: 4px;
 	::placeholder {
 		color: #9ca3af;
 		font-size: 14px;
@@ -143,6 +148,7 @@ const InputSelect = styled.select`
 	border-radius: 6px;
 	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
 	box-sizing: border-box;
+	margin-right: 4px;
 	::placeholder {
 		color: #9ca3af;
 		font-size: 14px;
@@ -174,6 +180,7 @@ const TextJokes = styled.p`
 	font-style: italic;
 	text-align: center;
 	margin: 24px 0;
+	max-width: 420px;
 `;
 
 export default Home;

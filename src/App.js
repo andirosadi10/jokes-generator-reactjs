@@ -30,9 +30,8 @@ const Container = styled.div`
 `;
 
 const Content = styled.main`
+	min-width: 375px;
 	margin: 0 auto;
-	min-width: 480px;
-	padding: 0;
 `;
 
 export default App;
